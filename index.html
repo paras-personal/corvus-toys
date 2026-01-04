@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CorVus Toys</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">CorVus Toys</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to CorVus Toys</h1>
+    <p>Where Imagination Takes Flight 🧸</p>
+    <button onclick="scrollToProducts()">Explore Toys</button>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Our Toys</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Toy 1">
+        <h3>Adventure Bear</h3>
+        <p>Soft • Safe • Cuddly</p>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Toy 2">
+        <h3>Robo Buddy</h3>
+        <p>Smart • Fun • Exciting</p>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Toy 3">
+        <h3>Magic Blocks</h3>
+        <p>Creative • Colorful • Educational</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About CorVus Toys</h2>
+    <p>
+      CorVus Toys is dedicated to creating joyful, safe, and imaginative toys for kids of all ages.
+      We believe every toy tells a story and sparks creativity.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="messageStatus"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 CorVus Toys — All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
