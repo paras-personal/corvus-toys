@@ -190,6 +190,11 @@ nav a:hover {
   cursor: pointer;
 }
 
+.product:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+}
+
 /* ================= CAROUSEL ARROWS ================= */
 
 .carousel-btn {
@@ -282,4 +287,15 @@ footer {
   padding: 15px;
   background: #2b2b52;
   color: white;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
