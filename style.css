@@ -25,6 +25,17 @@ header {
   font-weight: bold;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 45px;   /* adjust if needed */
+  width: auto;
+}
+
 nav ul {
   list-style: none;
   display: flex;
