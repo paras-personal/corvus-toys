@@ -1,16 +1,37 @@
 let lastScrollY = window.scrollY;
 const header = document.querySelector("header");
 
-function scrollToProducts() {
-  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+/* =======================
+   PRODUCT CAROUSEL LOGIC
+   ======================= */
+
+const productGrid = document.querySelector(".product-grid");
+const products = productGrid.children;
+
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
+
+// Enable carousel only if more than 5 products
+if (products.length > 5) {
+  productGrid.classList.add("carousel");
+  document.querySelector(".carousel-wrapper")
+    .classList.add("carousel-active");
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  document.getElementById("messageStatus").innerText =
-    "Thank you! Your message has been sent 🎉";
-  return false;
-}
+// Scroll by ONE card width
+const CARD_WIDTH = 260;
+
+nextBtn.addEventListener("click", () => {
+  productGrid.scrollBy({ left: CARD_WIDTH, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+  productGrid.scrollBy({ left: -CARD_WIDTH, behavior: "smooth" });
+});
+
+/* =======================
+   HEADER SCROLL BEHAVIOR
+   ======================= */
 
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
@@ -31,3 +52,28 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+
+/* =======================
+   OTHER FUNCTIONS
+   ======================= */
+
+function scrollToProducts() {
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  document.getElementById("messageStatus").innerText =
+    "Thank you! Your message has been sent 🎉";
+  return false;
+}
+
+function updateArrows() {
+  prevBtn.disabled = productGrid.scrollLeft === 0;
+  nextBtn.disabled =
+    productGrid.scrollLeft + productGrid.clientWidth >=
+    productGrid.scrollWidth;
+}
+
+productGrid.addEventListener("scroll", updateArrows);
+updateArrows();
