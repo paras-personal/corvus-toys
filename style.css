@@ -138,16 +138,22 @@ nav a:hover {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
   margin-top: 25px;
 }
 
 .product {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+  padding: 14px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  height: 100%; /* 🔥 forces equal height */
 }
 
 .product:hover {
@@ -156,7 +162,33 @@ nav a:hover {
 
 .product img {
   width: 100%;
-  border-radius: 10px;
+  aspect-ratio: 1 / 1;   /* 🔥 forces square box */
+  object-fit: cover;     /* safe now */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product-btn {
+  margin-top: auto;
+  padding: 8px 14px;
+  background: #2b2b52;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.product h3 {
+  font-size: 16px;            /* ⬇ */
+  margin-bottom: 4px;
+}
+
+.product p {
+  font-size: 13px;            /* ⬇ */
+  color: #555;
 }
 
 /* About */
