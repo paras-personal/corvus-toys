@@ -10,6 +10,11 @@ body {
   color: #333;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* ================= HEADER ================= */
 
 header {
@@ -27,6 +32,10 @@ header {
 
   transition: transform 0.35s ease, box-shadow 0.3s ease;
   will-change: transform;
+}
+
+section {
+  scroll-margin-top: 130px; /* header height + breathing space */
 }
 
 header.hide {
@@ -94,20 +103,58 @@ nav a:hover {
   padding: 120px 20px;
   background: linear-gradient(135deg, #ffcb05, #ff6b81);
   color: #2b2b52;
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+  opacity: 0.9;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/noice.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+
 .hero h1 {
-  font-size: 50px;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   margin-bottom: 10px;
 }
 
 .hero button {
   padding: 12px 25px;
   background: #2b2b52;
+  box-shadow: 0 12px 30px rgba(43,43,82,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: white;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+.hero button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(43,43,82,0.4);
+}
+
+.hero-content {
+  animation: heroFadeUp 0.8s ease forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= PRODUCTS ================= */
@@ -335,24 +382,147 @@ nav a:hover {
 /* ================= CONTACT ================= */
 
 .contact {
-  padding: 60px 20px;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #fdf6ff, #fff);
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #2b2b52;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Form card */
+.contact-form {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Focus state (VERY important) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2b2b52;
+  box-shadow: 0 0 0 3px rgba(43,43,82,0.15);
+}
+
+/* Button */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #2b2b52;
+  color: white;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(43,43,82,0.35);
+}
+
+/* Status text */
+#messageStatus {
+  margin-top: 12px;
+  font-size: 14px;
   text-align: center;
 }
 
-form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
-input,
-textarea {
-  padding: 12px;
-  border-radius: 5px;
-  border: 1px solid #888;
+.contact-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+  opacity: 0.85;
 }
+
+.hidden {
+  display: none;
+}
+
+.thank-you {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.thank-you h3 {
+  font-size: 24px;
+  color: #2b2b52;
+  margin-bottom: 10px;
+}
+
+.thank-you p {
+  font-size: 15px;
+  color: #555;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ================= FOOTER ================= */
 

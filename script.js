@@ -61,12 +61,23 @@ function scrollToProducts() {
   document.getElementById("products").scrollIntoView({ behavior: "smooth" });
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  document.getElementById("messageStatus").innerText =
-    "Thank you! Your message has been sent 🎉";
-  return false;
-}
+const form = document.getElementById("contactForm");
+const thankYou = document.getElementById("thankYouMessage");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Hide form, show thank-you
+  form.classList.add("hidden");
+  thankYou.classList.remove("hidden");
+
+  // Reset back after 10 seconds
+  setTimeout(() => {
+    thankYou.classList.add("hidden");
+    form.classList.remove("hidden");
+    form.reset();
+  }, 10000);
+});
 
 function updateArrows() {
   prevBtn.disabled = productGrid.scrollLeft === 0;
