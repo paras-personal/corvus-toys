@@ -100,3 +100,20 @@ const observer = new IntersectionObserver(entries => {
 });
 
 reveals.forEach(r => observer.observe(r));
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
+
+/* Close menu when clicking a link */
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});

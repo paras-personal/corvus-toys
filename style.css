@@ -15,6 +15,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 
 /* ================= HEADER ================= */
 
@@ -87,6 +91,12 @@ nav ul {
   gap: 25px;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 nav a {
   color: white;
   text-decoration: none;
@@ -95,6 +105,58 @@ nav a {
 
 nav a:hover {
   color: #ffcb05;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 1100;
+  }
+
+  nav.nav-menu {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    width: 100vw;
+    background: #2b2d5b;
+
+    display: none;                 /* 🔥 hidden by default */
+    transform: translateY(0);
+    z-index: 1000;
+  }
+
+  nav.nav-menu.active {
+    display: block;                /* 🔥 shown on click */
+  }
+
+  nav.nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+  }
+}
+
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ================= HERO ================= */
