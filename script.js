@@ -119,12 +119,13 @@ const productData = {
     tagline: "Soft • Fun • Exciting",
     images: ["assets/products/addie-boy/main.webp", "assets/products/addie-boy/image-2.webp", "assets/products/addie-boy/image-3.webp", "assets/products/addie-boy/image-4.webp"],
     description:
-      "Cute Labubu collectible toy loved by kids and collectors alike.",
+      "Addie Girl is a delightful sensory soft toy that encourages imagination, focus, and hands-on play for young children.",
     highlights: [
-      "🧸 Soft plush design",
-      "🎨 Collectible character",
-      "🚀 High quality finish",
-      "🎁 Perfect gift"
+      "🧸 Ultra-soft, plush fabric for a cozy feel",
+      "💖 Perfect for cuddling and emotional comfort",
+      "🌙 Great for bedtime companionship",
+      "🧼 Easy to clean and maintain",
+      "👶 Suitable for ages 3+"
     ]
   },
 
