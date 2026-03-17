@@ -101,7 +101,7 @@ const productData = {
 
   "addie-girl": {
     title: "Addie Girl",
-    tagline: "Soft • Fun • Comfort",
+    tagline: "Soft • Fun • Exciting",
     images: ["assets/products/addie-girl/main.webp", "assets/products/addie-girl/image-2.webp", "assets/products/addie-girl/image-3.webp", "assets/products/addie-girl/image-4.webp"],
     description:
       "Addie Girl is a delightful sensory soft toy that encourages imagination, focus, and hands-on play for young children.",
@@ -114,10 +114,10 @@ const productData = {
     ]
   },
 
-  "labubu": {
-    title: "Labubu Coca Cola Series",
+  "addie-boy": {
+    title: "Addie Boy",
     tagline: "Soft • Fun • Exciting",
-    images: ["assets/products/labubu.webp"],
+    images: ["assets/products/addie-boy/main.webp", "assets/products/addie-boy/image-2.webp", "assets/products/addie-boy/image-3.webp", "assets/products/addie-boy/image-4.webp"],
     description:
       "Cute Labubu collectible toy loved by kids and collectors alike.",
     highlights: [
