@@ -7,16 +7,18 @@ window.addEventListener("scroll", () => {
 
   const currentScrollY = window.scrollY;
 
-  if (currentScrollY > 20) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+  if (header) {
+    if (currentScrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
 
-  if (currentScrollY > lastScrollY && currentScrollY > 120) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
+    if (currentScrollY > lastScrollY && currentScrollY > 120) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
   }
 
   lastScrollY = currentScrollY;
@@ -27,13 +29,10 @@ window.addEventListener("scroll", () => {
 /* HERO BUTTON */
 
 function scrollToProducts() {
-
   const section = document.getElementById("products");
-
   if (section) {
     section.scrollIntoView({ behavior: "smooth" });
   }
-
 }
 
 
@@ -42,25 +41,19 @@ function scrollToProducts() {
 const form = document.getElementById("contactForm");
 const thankYou = document.getElementById("thankYouMessage");
 
-if (form) {
-
+if (form && thankYou) {
   form.addEventListener("submit", function (e) {
-
     e.preventDefault();
 
     form.classList.add("hidden");
     thankYou.classList.remove("hidden");
 
     setTimeout(() => {
-
       thankYou.classList.add("hidden");
       form.classList.remove("hidden");
       form.reset();
-
     }, 10000);
-
   });
-
 }
 
 
@@ -69,21 +62,15 @@ if (form) {
 const reveals = document.querySelectorAll(".reveal");
 
 if (reveals.length > 0) {
-
   const observer = new IntersectionObserver(entries => {
-
     entries.forEach(entry => {
-
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
       }
-
     });
-
   });
 
   reveals.forEach(r => observer.observe(r));
-
 }
 
 
@@ -93,26 +80,18 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
-if (hamburger) {
-
+if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
-
     navMenu.classList.toggle("active");
     document.body.classList.toggle("menu-open");
-
   });
-
 }
 
 navLinks.forEach(link => {
-
   link.addEventListener("click", () => {
-
-    navMenu.classList.remove("active");
+    if (navMenu) navMenu.classList.remove("active");
     document.body.classList.remove("menu-open");
-
   });
-
 });
 
 
@@ -120,16 +99,17 @@ navLinks.forEach(link => {
 
 const productData = {
 
-  "pop-it": {
-    title: "Pop IT",
-    tagline: "Smart • Fun • Creative",
-    image: "assets/products/pop-it.webp",
+  "addie-girl": {
+    title: "Addie Girl",
+    tagline: "Soft • Fun • Comfort",
+    images: ["assets/products/addie-girl/main.webp", "assets/products/addie-girl/image-2.webp", "assets/products/addie-girl/image-3.webp", "assets/products/addie-girl/image-4.webp"],
     description:
-      "Pop IT is a fun sensory toy designed to improve focus, creativity, and fine motor skills in kids.",
+      "Addie Girl is a delightful sensory soft toy that encourages imagination, focus, and hands-on play for young children.",
     highlights: [
-      "🧸 Safe & child-friendly materials",
-      "🎨 Boosts creativity and focus",
-      "🚀 Durable and lightweight",
+      "🧸 Ultra-soft, plush fabric for a cozy feel",
+      "💖 Perfect for cuddling and emotional comfort",
+      "🌙 Great for bedtime companionship",
+      "🧼 Easy to clean and maintain",
       "👶 Suitable for ages 3+"
     ]
   },
@@ -137,7 +117,7 @@ const productData = {
   "labubu": {
     title: "Labubu Coca Cola Series",
     tagline: "Soft • Fun • Exciting",
-    image: "assets/products/labubu.webp",
+    images: ["assets/products/labubu.webp"],
     description:
       "Cute Labubu collectible toy loved by kids and collectors alike.",
     highlights: [
@@ -151,7 +131,7 @@ const productData = {
   "baby-balance-bike": {
     title: "Baby Balance Bike",
     tagline: "Balance • Playful • Fun",
-    image: "assets/products/baby-balance-cycle.webp",
+    images: ["assets/products/baby-balance-cycle.webp"],
     description:
       "A beginner balance bike that helps toddlers develop coordination and confidence.",
     highlights: [
@@ -165,7 +145,7 @@ const productData = {
   "remote-control-car": {
     title: "Remote Control Car",
     tagline: "Creative • Colorful • Educational",
-    image: "assets/products/remote-control-car.webp",
+    images: ["assets/products/remote-control-car.webp"],
     description:
       "Fun remote control car designed for exciting indoor and outdoor play.",
     highlights: [
@@ -179,7 +159,7 @@ const productData = {
   "baby-panda-keychain": {
     title: "Baby Panda KeyChain",
     tagline: "Creative • Colorful • KeyChains",
-    image: "assets/products/baby-panda-keychain.webp",
+    images: ["assets/products/baby-panda-keychain.webp"],
     description:
       "Cute panda keychain accessory perfect for bags and keys.",
     highlights: [
@@ -193,7 +173,7 @@ const productData = {
   "goku-keychain": {
     title: "Goku KeyChain",
     tagline: "Creative • Colorful • KeyChains",
-    image: "assets/products/goku.webp",
+    images: ["assets/products/goku.webp"],
     description:
       "Anime themed Goku keychain loved by Dragon Ball fans.",
     highlights: [
@@ -207,15 +187,21 @@ const productData = {
 };
 
 
-/* LOAD PRODUCT */
+/* ================= LOAD PRODUCT (FIXED) ================= */
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
+function loadProduct() {
 
-if (productData[productId]) {
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+
+    if (!productId || !productData[productId]) {
+      console.error("Invalid product ID");
+      return;
+    }
 
   const product = productData[productId];
 
+  // TEXT
   document.getElementById("pageTitle").textContent =
     product.title + " | CorVus Toys";
 
@@ -225,20 +211,50 @@ if (productData[productId]) {
   document.getElementById("productTagline").textContent =
     product.tagline;
 
-  document.getElementById("productImage").src =
-    product.image;
-
   document.getElementById("productDescription").textContent =
     product.description;
 
+  // HIGHLIGHTS
   const list = document.getElementById("productHighlights");
+  if (list) {
+    list.innerHTML = "";
+    product.highlights.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  }
 
-  product.highlights.forEach(item => {
+  // IMAGES
+  const mainImage = document.getElementById("mainProductImage");
+  const thumbnailContainer = document.getElementById("thumbnailContainer");
 
-    const li = document.createElement("li");
-    li.textContent = item;
-    list.appendChild(li);
+  if (mainImage && thumbnailContainer) {
+    thumbnailContainer.innerHTML = "";
 
-  });
+    mainImage.src = product.images[0];
+
+    product.images.forEach(img => {
+      const thumb = document.createElement("img");
+      thumb.src = img;
+
+      thumb.addEventListener("click", () => {
+        mainImage.src = img;
+      });
+
+      thumbnailContainer.appendChild(thumb);
+    });
+  }
 
 }
+
+// run only after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+
+  const isProductPage = document.getElementById("mainProductImage");
+
+  if (isProductPage) {
+    loadProduct();
+  }
+
+});
