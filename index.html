@@ -1,163 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/favicon.png" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <title>CorVus Toys</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CorVus Toys is a cheerful toy store with soft toys, ride-ons, remote control toys, fidget toys, and collectible keychains.">
+  <title>CorVus Toys | Toy Store for Playful Gifts</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="icon" href="assets/favicon.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="assets/favicon.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="#home">
-          <img src="assets/logo.png" alt="CorVus Toys Logo">
-        </a>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <!-- 🍔 Hamburger -->
-      <button class="hamburger" aria-label="Toggle menu">
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="index.html#home" aria-label="CorVus Toys home">
+        <img src="assets/logo.png" alt="CorVus Toys">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" data-nav-toggle>
+        <span class="sr-only">Menu</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav class="site-nav" id="primaryNav" data-nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero__content">
+        <p class="eyebrow">Curated toys for curious kids</p>
+        <h1>CorVus Toys</h1>
+        <p class="hero__lede">Bright, gift-ready toys selected for active play, comfort, collecting, and everyday imagination.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#products">Shop toys</a>
+          <a class="button button--ghost" href="#contact">Ask for availability</a>
+        </div>
+      </div>
+    </section>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Welcome to CorVus Toys</h1>
-      <p>Where Imagination Takes Flight 🧸</p>
-    </div>
-  </section>
+    <section class="store-strip" aria-label="Store highlights">
+      <div>
+        <span>Soft toys</span>
+        <strong>Comfort picks</strong>
+      </div>
+      <div>
+        <span>Ride-ons</span>
+        <strong>Early balance</strong>
+      </div>
+      <div>
+        <span>Keychains</span>
+        <strong>Collectible gifts</strong>
+      </div>
+    </section>
 
-  <section id="products" class="products">
-  <h2>Our Toys</h2>
-
-  <div class="product-grid">
-
-    <a href="product.html?id=addie-girl" class="product">
-      <img src="assets/products/addie-girl/main.webp" alt="Addie Girl Soft Toy" loading="lazy">
-      <h3>Addie Girl</h3>
-      <p>Smart • Fun • Creative</p>
-    </a>
-
-    <a href="product.html?id=addie-boy" class="product">
-      <img src="assets/products/addie-boy/main.webp" alt="Addie Boy Soft Toy" loading="lazy">
-      <h3>Addie Boy</h3>
-      <p>Soft • Fun • Exciting</p>
-    </a>
-
-    <a href="product.html?id=baby-balance-bike" class="product">
-      <img src="assets/products/baby-balance-cycle.webp" alt="Baby Balance Bike" loading="lazy">
-      <h3>Baby Balance Bike</h3>
-      <p>Balance • Playful • Fun</p>
-    </a>
-
-    <a href="product.html?id=remote-control-car" class="product">
-      <img src="assets/products/remote-control-car.webp" alt="Remote Control Car" loading="lazy">
-      <h3>Remote Control Car</h3>
-      <p>Creative • Colorful • Educational</p>
-    </a>
-
-    <a href="product.html?id=baby-panda-keychain" class="product">
-      <img src="assets/products/baby-panda-keychain.webp" alt="Baby Panda KeyChain" loading="lazy">
-      <h3>Baby Panda KeyChain</h3>
-      <p>Creative • Colorful • KeyChains</p>
-    </a>
-
-    <a href="product.html?id=goku-keychain" class="product">
-      <img src="assets/products/goku.webp" alt="Goku KeyChain" loading="lazy">
-      <h3>Goku KeyChain</h3>
-      <p>Creative • Colorful • KeyChains</p>
-    </a>
-
-  </div>
-</section>
-
-<section id="about" class="about">
-  <div class="about-content">
-    <h2>About CorVus Toys</h2>
-    <p class="about-tagline">Where imagination meets joyful learning</p>
-
-    <div class="about-features">
-      <div class="feature reveal">
-        🧸
-        <h4>Safe & Child-Friendly</h4>
-        <p>Designed with care using safe materials for kids.</p>
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <p class="eyebrow">Shop the shelf</p>
+        <h2>Popular Toys</h2>
+        <p>Browse a compact range of soft toys, sensory play, ride-ons, remote control fun, and character keychains.</p>
       </div>
 
-      <div class="feature reveal">
-        🎨
-        <h4>Creative Play</h4>
-        <p>Encourages imagination and hands-on learning.</p>
+      <div class="filter-row" aria-label="Filter products">
+        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-button" type="button" data-filter="soft-toys" aria-pressed="false">Soft toys</button>
+        <button class="filter-button" type="button" data-filter="sensory-play" aria-pressed="false">Sensory play</button>
+        <button class="filter-button" type="button" data-filter="active-play" aria-pressed="false">Active play</button>
+        <button class="filter-button" type="button" data-filter="collectibles" aria-pressed="false">Collectibles</button>
       </div>
 
-      <div class="feature reveal">
-        🚀
-        <h4>Built to Inspire</h4>
-        <p>Every toy tells a story and sparks curiosity.</p>
+      <div class="product-grid" data-product-grid></div>
+    </section>
+
+    <section class="split-section" id="about">
+      <div class="split-section__text">
+        <p class="eyebrow">About CorVus</p>
+        <h2>Designed around play that feels joyful, safe, and easy to gift.</h2>
+        <p>CorVus Toys brings together colorful toys that fit birthdays, return gifts, festive gifting, and everyday play. The catalog is kept focused so parents can quickly find something age-friendly and delightful.</p>
+        <ul class="check-list">
+          <li>Child-friendly picks with soft finishes and rounded forms.</li>
+          <li>Options for quiet comfort, movement, collecting, and sensory play.</li>
+          <li>Simple product pages with photos, highlights, and inquiry links.</li>
+        </ul>
       </div>
-    </div>
-  </div>
-</section>
 
+      <figure class="image-panel">
+        <img src="assets/hero-toy-studio.png" alt="A colorful toy studio scene with plush toys, blocks, and gift boxes">
+      </figure>
+    </section>
 
-  <section id="contact" class="contact">
-  <div class="contact-container">
-    <div class="contact-info">
-      <h2>Contact Us</h2>
-      <p class="contact-subtitle">
-        Have a question, suggestion, or just want to say hi?
-        We’d love to hear from you 💛
-      </p>
-    </div>
+    <section class="promise-band" aria-label="Why customers choose CorVus Toys">
+      <div>
+        <h3>Gift-ready range</h3>
+        <p>Small surprises, cuddle companions, and playful activity toys in one place.</p>
+      </div>
+      <div>
+        <h3>Easy selection</h3>
+        <p>Every item page calls out category, age guidance, and practical highlights.</p>
+      </div>
+      <div>
+        <h3>Friendly support</h3>
+        <p>Send an inquiry and the team can help with availability, bundles, and gifting needs.</p>
+      </div>
+    </section>
 
-    <form id="contactForm" class="contact-form">
-    <div class="form-group">
-      <input type="text" name="name" placeholder="Your Name" required />
-    </div>
+    <section class="contact-section" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Talk to us</p>
+        <h2>Need help choosing a toy?</h2>
+        <p>Share the age, occasion, or product you like. CorVus Toys will get back with availability and suggestions.</p>
+      </div>
 
-    <div class="form-group">
-      <input type="email" name="email" placeholder="Your Email" required />
-    </div>
+      <form class="contact-form" id="contactForm">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
 
-    <div class="form-group">
-      <textarea placeholder="Your Message" required></textarea>
-    </div>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
 
-    <button type="submit">Send Message</button>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
 
-    <p class="contact-note">We usually reply within 24 hours 🚀</p>
-    </form>
-    <div id="thankYouMessage" class="thank-you hidden">
-    <h3>Thank you for reaching out! 🎉</h3>
-    <p>We’ve received your message and will get back to you shortly.</p>
-    <p class="contact-note">We usually reply within 24 hours 🚀</p>
-    </div>
-  </div>
-  </section>
+        <button class="button button--primary" type="submit">Send message</button>
+        <p class="form-note">This demo form confirms your message on screen.</p>
+      </form>
 
+      <div class="thank-you" id="thankYouMessage" hidden>
+        <h3>Thank you for reaching out.</h3>
+        <p>Your message has been noted. The form will reset shortly.</p>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    <p>© 2026 CorVus Toys — All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>Copyright 2026 CorVus Toys. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
