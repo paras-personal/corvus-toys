@@ -3,74 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="View CorVus Toys product photos, highlights, and availability details.">
-  <title id="pageTitle">Product | CorVus Toys</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <title>Redirecting | CorVus Toys</title>
+  <!-- Legacy product.html?id= links now live at /products/<id>.html -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <script>
+    (function () {
+      var id = new URLSearchParams(window.location.search).get("id");
+      var known = [
+        "addie-girl", "addie-boy", "baby-balance-bike", "remote-control-car",
+        "pop-it-fidget", "baby-panda-keychain", "goku-keychain", "labubu-charm"
+      ];
+      window.location.replace(
+        id && known.indexOf(id) !== -1 ? "/products/" + id + ".html" : "/#products"
+      );
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/#products"></noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" data-header>
-    <div class="nav-shell">
-      <a class="brand" href="index.html#home" aria-label="CorVus Toys home">
-        <img src="assets/logo.png" alt="CorVus Toys">
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" data-nav-toggle>
-        <span class="sr-only">Menu</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" id="primaryNav" data-nav>
-        <a href="index.html#home">Home</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" data-product-page>
-    <section class="product-hero">
-      <a class="back-link" href="index.html#products">Back to products</a>
-      <p class="eyebrow" id="productCategory">Toy details</p>
-      <h1 id="productTitle">Product</h1>
-      <p id="productTagline" class="product-tagline"></p>
-    </section>
-
-    <section class="product-detail">
-      <div class="product-gallery">
-        <div class="main-image">
-          <img id="mainProductImage" src="" alt="">
-        </div>
-        <div class="thumbnail-images" id="thumbnailContainer" aria-label="Product photos"></div>
-      </div>
-
-      <article class="product-info">
-        <p class="product-badge" id="productBadge"></p>
-        <h2>About this toy</h2>
-        <p id="productDescription"></p>
-        <ul class="product-highlights" id="productHighlights"></ul>
-        <a class="button button--primary" id="productInquiry" href="index.html#contact">Ask for availability</a>
-      </article>
-    </section>
-
-    <section class="related-section">
-      <div class="section-heading">
-        <p class="eyebrow">More from CorVus</p>
-        <h2>You may also like</h2>
-      </div>
-      <div class="product-grid product-grid--compact" data-related-products></div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Copyright 2026 CorVus Toys. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <p>This page has moved. <a href="/#products">Browse all CorVus Toys</a>.</p>
 </body>
 </html>
