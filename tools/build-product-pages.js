@@ -214,7 +214,7 @@ function productCard(p) {
             <span class="product-card__meta">${esc(p.category)} · ${esc(p.age)}</span>
             <h3>${esc(p.shortTitle)}</h3>
             <p>${esc(p.tagline)}</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>`;
 }
@@ -308,7 +308,7 @@ function productPage(p) {
   <link rel="apple-touch-icon" href="/assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script type="application/ld+json">
 ${productJsonLd(p)}
@@ -363,7 +363,7 @@ ${galleryMarkup(p)}
         <p class="product-tagline">${esc(p.tagline)}</p>
         <p class="product-description">${esc(p.description)}</p>
 
-        <h2 class="product-info__subhead">Why kids love it</h2>
+        <h2 class="product-info__subhead">why kids love it</h2>
         <ul class="product-highlights">
 ${highlights}
         </ul>
@@ -377,8 +377,8 @@ ${highlights}
 
     <section class="related-section">
       <div class="section-heading">
-        <p class="eyebrow">More from CorVus</p>
-        <h2>You may also like</h2>
+        <p class="eyebrow">more from the shelf</p>
+        <h2>You may <span class="mark-yellow">also like</span></h2>
       </div>
       <div class="product-grid product-grid--compact">
 ${related}

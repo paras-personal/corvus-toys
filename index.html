@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="/assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script type="application/ld+json">
   {
@@ -108,20 +108,13 @@
 
   <main id="main">
     <section class="hero" id="home">
-      <div class="hero__decor" aria-hidden="true">
-        <span class="float-toy float-toy--1">🧸</span>
-        <span class="float-toy float-toy--2">🚗</span>
-        <span class="float-toy float-toy--3">🎈</span>
-        <span class="float-toy float-toy--4">⭐</span>
-        <span class="float-toy float-toy--5">🪁</span>
-      </div>
       <div class="hero__content">
-        <p class="eyebrow">Curated toys for curious kids</p>
+        <p class="eyebrow">A small shelf of very good toys</p>
         <h1>Toys that make <span class="squiggle">little faces</span> light up</h1>
-        <p class="hero__lede">Cuddly soft toys, zippy ride-ons, fidget fun, and collectible charms - hand-picked, gift-ready, and loved by kids of every age.</p>
+        <p class="hero__lede">Cuddly soft toys, zippy ride-ons, fidget fun, and collectible charms. Hand-picked, gift-ready, and loved by kids of every age.</p>
         <div class="hero__actions">
-          <a class="button button--primary" href="#products">Shop toys</a>
-          <a class="button button--ghost" href="#contact">Ask for availability</a>
+          <a class="button button--primary" href="#products">Browse the shelf</a>
+          <a class="button button--ghost" href="#contact">Ask about a toy</a>
         </div>
         <ul class="hero__badges" aria-label="Store highlights">
           <li><strong>8+</strong> curated toys</li>
@@ -129,28 +122,76 @@
           <li><strong>100%</strong> gift-ready</li>
         </ul>
       </div>
+
+      <div class="hero__collage" aria-hidden="true">
+        <figure class="polaroid">
+          <img src="/assets/products/addie-girl/main.webp" alt="" width="400" height="400" loading="eager">
+          <figcaption>bedtime bestie</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="/assets/products/remote-control-car.webp" alt="" width="400" height="400" loading="lazy">
+          <figcaption>vroom vroom!</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="/assets/products/labubu.webp" alt="" width="400" height="400" loading="lazy">
+          <figcaption>shelf superstar</figcaption>
+        </figure>
+        <svg class="doodle-star" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4l4.5 13.5L42 20l-13 5.5L26 40l-5-13.5L7 24l13.5-5.5L24 4z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </section>
 
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Soft toys ★ Ride-ons ★ Pop its ★ Keychains &amp; charms ★ Gift-ready picks ★</span>
+        <span>Soft toys ★ Ride-ons ★ Pop its ★ Keychains &amp; charms ★ Gift-ready picks ★</span>
+      </div>
+    </div>
+
     <section class="category-strip" aria-label="Toy categories">
-      <a href="#products" data-jump-filter="soft-toys"><span aria-hidden="true">🧸</span><strong>Soft toys</strong><small>Cuddle companions</small></a>
-      <a href="#products" data-jump-filter="active-play"><span aria-hidden="true">🚲</span><strong>Active play</strong><small>Ride, race &amp; move</small></a>
-      <a href="#products" data-jump-filter="sensory-play"><span aria-hidden="true">🫧</span><strong>Sensory play</strong><small>Pop, fidget &amp; focus</small></a>
-      <a href="#products" data-jump-filter="collectibles"><span aria-hidden="true">🗝️</span><strong>Collectibles</strong><small>Charms &amp; keychains</small></a>
+      <a href="#products" data-jump-filter="soft-toys">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 31C10 25 4 19.5 4 13.4 4 9 7.2 6 11 6c3 0 5.5 1.7 7 4.3C19.5 7.7 22 6 25 6c3.8 0 7 3 7 7.4C32 19.5 26 25 18 31z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+        </svg>
+        <strong>Soft toys</strong><small>cuddle companions</small>
+      </a>
+      <a href="#products" data-jump-filter="active-play">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 3L8 21h8l-2 12L28 14h-9l1-11z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+        </svg>
+        <strong>Active play</strong><small>ride, race &amp; move</small>
+      </a>
+      <a href="#products" data-jump-filter="sensory-play">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="12" r="5" stroke="currentColor" stroke-width="2.6"/>
+          <circle cx="25" cy="10" r="4" stroke="currentColor" stroke-width="2.6"/>
+          <circle cx="19" cy="25" r="6" stroke="currentColor" stroke-width="2.6"/>
+        </svg>
+        <strong>Sensory play</strong><small>pop, fidget &amp; focus</small>
+      </a>
+      <a href="#products" data-jump-filter="collectibles">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="13" cy="11" r="7" stroke="currentColor" stroke-width="2.6"/>
+          <path d="M18 16L30 28m-4-2l-3 3m-1-7l-3 3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <strong>Collectibles</strong><small>charms &amp; keychains</small>
+      </a>
     </section>
 
     <section class="products-section" id="products">
       <div class="section-heading">
-        <p class="eyebrow">Shop the shelf</p>
-        <h2>Our popular toys</h2>
-        <p>A compact, well-loved range - soft toys, sensory play, ride-ons, remote control fun, and character keychains.</p>
+        <p class="eyebrow">fresh from the toy shelf</p>
+        <h2>Our <span class="mark-yellow">popular</span> toys</h2>
+        <p>A compact, well-loved range. Soft toys, sensory play, ride-ons, remote control fun, and character keychains.</p>
       </div>
 
       <div class="filter-row" role="group" aria-label="Filter products by category">
         <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All toys</button>
-        <button class="filter-button" type="button" data-filter="soft-toys" aria-pressed="false">🧸 Soft toys</button>
-        <button class="filter-button" type="button" data-filter="sensory-play" aria-pressed="false">🫧 Sensory play</button>
-        <button class="filter-button" type="button" data-filter="active-play" aria-pressed="false">🚲 Active play</button>
-        <button class="filter-button" type="button" data-filter="collectibles" aria-pressed="false">🗝️ Collectibles</button>
+        <button class="filter-button" type="button" data-filter="soft-toys" aria-pressed="false">Soft toys</button>
+        <button class="filter-button" type="button" data-filter="sensory-play" aria-pressed="false">Sensory play</button>
+        <button class="filter-button" type="button" data-filter="active-play" aria-pressed="false">Active play</button>
+        <button class="filter-button" type="button" data-filter="collectibles" aria-pressed="false">Collectibles</button>
       </div>
 
       <div class="product-grid" data-product-grid>
@@ -163,7 +204,7 @@
             <span class="product-card__meta">Soft Toys · 3+ years</span>
             <h3>Addie Girl</h3>
             <p>A huggable plush companion for story-led play and calm bedtimes.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -176,7 +217,7 @@
             <span class="product-card__meta">Soft Toys · 3+ years</span>
             <h3>Addie Boy</h3>
             <p>A cheerful plush buddy for everyday comfort and play.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -189,7 +230,7 @@
             <span class="product-card__meta">Active Play · 1-3 years</span>
             <h3>Baby Balance Bike</h3>
             <p>A first ride-on that builds balance and confidence.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -202,7 +243,7 @@
             <span class="product-card__meta">Active Play · 4+ years</span>
             <h3>Remote Control Car</h3>
             <p>Easy remote control racing for beginner drivers.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -215,7 +256,7 @@
             <span class="product-card__meta">Sensory Play · 3+ years</span>
             <h3>Pop It Fidget</h3>
             <p>Satisfying tactile play for busy little hands.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -228,7 +269,7 @@
             <span class="product-card__meta">Collectibles · 5+ years</span>
             <h3>Baby Panda Keychain</h3>
             <p>An adorable panda charm for keys, bags, and pencil cases.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -241,7 +282,7 @@
             <span class="product-card__meta">Collectibles · 5+ years</span>
             <h3>Goku Keychain</h3>
             <p>A bold anime-inspired collectible for fans and bags.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
 
@@ -254,18 +295,18 @@
             <span class="product-card__meta">Collectibles · 5+ years</span>
             <h3>Labubu Charm</h3>
             <p>A trending character charm for bags and display shelves.</p>
-            <span class="product-card__cta">View toy <span aria-hidden="true">&rarr;</span></span>
+            <span class="product-card__cta">take a look &rarr;</span>
           </div>
         </a>
       </div>
-      <p class="empty-filter-note" data-empty-note hidden>No toys in this category yet - check back soon!</p>
+      <p class="empty-filter-note" data-empty-note hidden>Nothing on this shelf yet — check back soon!</p>
     </section>
 
     <section class="split-section" id="about">
       <div class="split-section__text reveal">
-        <p class="eyebrow">About CorVus</p>
-        <h2>Play that feels joyful, safe, and easy to gift</h2>
-        <p>CorVus Toys brings together colorful toys that fit birthdays, return gifts, festive gifting, and everyday play. We keep the catalog small on purpose - so parents can quickly find something age-friendly and delightful without scrolling forever.</p>
+        <p class="eyebrow">about CorVus</p>
+        <h2>Play that feels <span class="mark-sky">joyful</span>, safe, and easy to gift</h2>
+        <p>CorVus Toys brings together colorful toys that fit birthdays, return gifts, festive gifting, and everyday play. We keep the catalog small on purpose — so parents can quickly find something age-friendly and delightful without scrolling forever.</p>
         <ul class="check-list">
           <li>Child-friendly picks with soft finishes and rounded forms</li>
           <li>Options for quiet comfort, movement, collecting, and sensory play</li>
@@ -275,26 +316,35 @@
       </div>
 
       <div class="about-collage reveal" aria-hidden="true">
-        <img src="/assets/products/addie-girl/main.webp" alt="" loading="lazy" width="400" height="400">
-        <img src="/assets/products/remote-control-car.webp" alt="" loading="lazy" width="400" height="400">
-        <img src="/assets/products/pop-it.webp" alt="" loading="lazy" width="400" height="400">
-        <img src="/assets/products/labubu.webp" alt="" loading="lazy" width="400" height="400">
+        <figure class="polaroid">
+          <img src="/assets/products/addie-girl/main.webp" alt="" loading="lazy" width="400" height="400">
+          <figcaption>so soft</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="/assets/products/remote-control-car.webp" alt="" loading="lazy" width="400" height="400">
+          <figcaption>zoom!</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="/assets/products/pop-it.webp" alt="" loading="lazy" width="400" height="400">
+          <figcaption>pop pop pop</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="/assets/products/labubu.webp" alt="" loading="lazy" width="400" height="400">
+          <figcaption>tiny treasure</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="promise-band" aria-label="Why customers choose CorVus Toys">
       <div class="reveal">
-        <span class="promise-icon" aria-hidden="true">🎁</span>
         <h3>Gift-ready range</h3>
         <p>Small surprises, cuddle companions, and playful activity toys in one place.</p>
       </div>
       <div class="reveal">
-        <span class="promise-icon" aria-hidden="true">🔍</span>
         <h3>Easy selection</h3>
         <p>Every toy page calls out category, age guidance, and practical highlights.</p>
       </div>
       <div class="reveal">
-        <span class="promise-icon" aria-hidden="true">💬</span>
         <h3>Friendly support</h3>
         <p>Send an inquiry and we will help with availability, bundles, and gifting ideas.</p>
       </div>
@@ -302,7 +352,7 @@
 
     <section class="faq-section" id="faq">
       <div class="section-heading">
-        <p class="eyebrow">Good to know</p>
+        <p class="eyebrow">good to know</p>
         <h2>Frequently asked questions</h2>
       </div>
       <div class="faq-list">
@@ -327,7 +377,7 @@
 
     <section class="contact-section" id="contact">
       <div class="contact-copy reveal">
-        <p class="eyebrow">Talk to us</p>
+        <p class="eyebrow">talk to us</p>
         <h2>Need help choosing a toy?</h2>
         <p>Share the age, occasion, or product you like. CorVus Toys will get back with availability and suggestions.</p>
         <ul class="check-list">
@@ -358,7 +408,6 @@
       </form>
 
       <div class="thank-you" id="thankYouMessage" hidden>
-        <span aria-hidden="true">🎉</span>
         <h3>Thank you for reaching out!</h3>
         <p>Your message has been noted. The form will reset shortly.</p>
       </div>
